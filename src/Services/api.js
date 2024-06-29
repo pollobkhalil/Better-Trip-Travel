@@ -1,9 +1,9 @@
 
-const baseURL = 'https://dev.triumphdigital.co.th/btt/wp-json/custom/v1';
+const baseURL = 'https://dev.triumphdigital.co.th/btt/wp-json/custom/v1/tours';
 
-export const fetchTours = async () => {
+export const fetchTours = async (page = 1) => {
   try {
-    const response = await fetch(`${baseURL}/tours`);
+    const response = await fetch(`${baseURL}?page=${page}`);
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }
